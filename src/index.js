@@ -248,7 +248,7 @@ const nullNode = raw(`NULL`);
  */
 function literal(val /*: mixed */) /*: SQLNode */ {
   if (typeof val === "string" && val.match(/^[-a-zA-Z0-9_@! ]*$/)) {
-    return raw(`'${val}'`);
+    return raw(`"${val}"`);
   } else if (typeof val === "number" && Number.isFinite(val)) {
     if (Number.isInteger(val)) {
       return raw(String(val));
